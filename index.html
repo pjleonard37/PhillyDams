@@ -32,8 +32,7 @@
 
       var myBeaverIcon = L.icon({
       	iconUrl: 'images/beaver.png',
-      	iconSize: [38, 95],
-      	iconAnchor: [22, 94]
+      	iconSize: [38, 38],
       });
 
 
@@ -42,11 +41,15 @@
         .addTo(map);
 
       damLayer.on('layeradd', function(e) {
-          var marker = e.layer,
-              feature = marker.feature;
+        var marker = e.layer,
+            feature = marker.feature;
 
-          marker.setIcon(myBeaverIcon);
-        });
+        marker.setIcon(myBeaverIcon);
+      });
+
+      damLayer.on('ready', function() {
+          map.fitBounds(featureLayer.getBounds());
+      });
 
       </script>
       <footer>
