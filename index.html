@@ -28,11 +28,11 @@
       <script>
       L.mapbox.accessToken = 'pk.eyJ1IjoicGpsZW9uYXJkMzciLCJhIjoic2YyV2luUSJ9.lPoix24JhyR8sljAwjHg9A';
       var map = L.mapbox.map('map', 'mapbox.streets')
-        .setView([40, -74.50], 9);
+        .setView([39.95, -75.16], 9);
 
       var myBeaverIcon = L.icon({
       	iconUrl: 'images/beaver.png',
-      	iconSize: [38, 38],
+      	iconSize: [50, 50],
       });
 
 
@@ -50,6 +50,8 @@
       damLayer.on('ready', function() {
           map.fitBounds(damLayer.getBounds());
       });
+
+      L.mapbox.styleLayer('mapbox://styles/pjleonard37/cimkx1dfr00cvqxno7t6daqfo').addTo(map);
 
       </script>
       <footer>
