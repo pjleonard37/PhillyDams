@@ -30,6 +30,13 @@
       var map = L.mapbox.map('map', 'mapbox.streets')
         .setView([40, -74.50], 9);
 
+      var myBeaverIcon = L.icon({
+      	iconUrl: '/images/beaver.jpg',
+      	iconSize: [38, 95],
+      	iconAnchor: [22, 94]
+      });
+
+
       var damLayer = L.mapbox.featureLayer()
         .loadURL('data/DAMS.geojson')
         .addTo(map);
@@ -38,7 +45,7 @@
           var marker = e.layer,
               feature = marker.feature;
 
-          marker.setIcon(L.icon("/images/beaver.jpg"));
+          marker.setIcon(myBeaverIcon);
         });
 
       </script>
