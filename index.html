@@ -30,6 +30,9 @@
       L.mapbox.accessToken = 'pk.eyJ1IjoicGpsZW9uYXJkMzciLCJhIjoic2YyV2luUSJ9.lPoix24JhyR8sljAwjHg9A';
       var map = L.mapbox.map('map', 'mapbox.streets')
           .setView([40, -74.50], 9);
+      var featureLayer = L.mapbox.featureLayer()
+        .loadURL('/data/DAMS.geojson')
+        .addTo(map);
       </script>
       <footer>
       </footer>
