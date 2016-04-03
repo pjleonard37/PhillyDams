@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Phillydams by pjleonard37</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/github-light.css">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -33,6 +32,9 @@
       var featureLayer = L.mapbox.featureLayer()
         .loadURL('data/DAMS.geojson')
         .addTo(map);
+      map.featureLayer.on('click', function(e) {
+          map.panTo(e.layer.getLatLng());
+      });
       </script>
       <footer>
       </footer>
